@@ -9,9 +9,14 @@ import com.sumitm.model.Speaker;
 public class SpeakerServiceImpl implements SpeakerService {
 
 	// Hard coded, can be solved using spring
-	private SpeakerRepository repository = new HibernateSpeakerRepositoryImpl();
+	private SpeakerRepository repository; // = new HibernateSpeakerRepositoryImpl();
 	
 	public List<Speaker> findAll(){
 		return repository.findAll();
 	}
+
+	public void setRepository(SpeakerRepository repository) {
+		this.repository = repository;
+	}	
+	
 }
