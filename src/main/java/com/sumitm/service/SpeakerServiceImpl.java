@@ -11,6 +11,10 @@ public class SpeakerServiceImpl implements SpeakerService {
 	// Hard coded, can be solved using spring
 	private SpeakerRepository repository; // = new HibernateSpeakerRepositoryImpl();
 	
+	public SpeakerServiceImpl (SpeakerRepository speakerRepository) {
+		repository = speakerRepository;
+	}
+
 	public List<Speaker> findAll(){
 		return repository.findAll();
 	}
